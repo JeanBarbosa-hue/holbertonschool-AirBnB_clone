@@ -18,9 +18,11 @@ class BaseModel:
                             value, '%Y-%m-%dT%H:%M:%S.%f')
                     setattr(self, key, value)
         else:
+            from models import storage
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = self.created_at
+            storage.new(self)
 
     def updated(self):
         """update method"""
@@ -28,11 +30,15 @@ class BaseModel:
 
     def __str__(self):
         """string method"""
-        return (f"[{self.__class__.__name}] ({self.id}) {self.__dict__}")
+        class_name = type(self).__name__
+        return (f"[{class_name}] ({self.id}) {self.__dict__}")
 
     def save(self):
         """save updated info method"""
         self.updated_at = datetime.now()
+        from models import storage
+        storage.new(self)
+        storage.save()
 
     def to_dict(self):
         """convert dictionary method"""
