@@ -23,7 +23,7 @@ class HBNBCommand(cmd.Cmd):
             return
 
         try:
-            new_instance = eval(arg)
+            new_instance = eval(arg)()
 
             new_instance.save()
 
