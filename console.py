@@ -3,9 +3,8 @@
     Console for the AirBnB project.
 """
 import cmd
-import sys
+from models import BaseModel
 from models import storage
-from models.base_model import BaseModel
 
 
 class HBNBCommand(cmd.Cmd):
@@ -18,13 +17,18 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, arg):
         """Create a new instance of BaseModel, save it, and print the id."""
+
         if not arg:
             print("** class name missing **")
             return
+
         try:
             new_instance = eval(arg)()
+
             new_instance.save()
+
             print(new_instance.id)
+
         except NameError:
             print("** class doesn't exist **")
 
@@ -139,31 +143,39 @@ class HBNBCommand(cmd.Cmd):
     def help_quit(self):
         """Help information for quit command."""
         print("Quit command to exit the program.")
+        print()
 
     def help_EOF(self):
         """Help information for EOF command."""
         print("EOF command to exit the program.")
+        print()
 
     def help_create(self):
         """Help information for create command."""
         print("Create a new instance of BaseModel, save it, and print the id.")
+        print()
 
     def help_show(self):
         """Help information for show command."""
         print("Print the string representation of an instance.")
+        print()
 
     def help_destroy(self):
         """Help information for destroy command."""
         print("Delete an instance based on the class name and id.")
+        print()
 
     def help_all(self):
         """Help information for all command."""
         print("Print all string representations of instances.")
+        print()
 
     def help_update(self):
         """Help information for update command."""
         print("Update an instance based on the class name and id.")
+        print()
 
 
 if __name__ == '__main__':
+
     HBNBCommand().cmdloop()
