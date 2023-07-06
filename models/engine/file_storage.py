@@ -3,6 +3,7 @@
 
 import json
 from models.base_model import BaseModel
+from models.user import User
 
 
 class FileStorage:
@@ -39,6 +40,11 @@ class FileStorage:
                 json_data = json.load(file)
                 self.__objects.clear()
                 for key, value in json_data.items():
-                    self.__objects[key] = BaseModel(**value)
+                    class_name = value['__class__']
+                    if class_name == 'User':
+                        self.__objects[key] = User(**value)
+                    else:
+                        self.__objects[key] = BaseModel(**value)
         except:
-            pass
+            FileNotFoundError
+        pass
