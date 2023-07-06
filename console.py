@@ -3,7 +3,7 @@
     Console for the AirBnB project.
 """
 import cmd
-from models import BaseModel
+from models.base_model import BaseModel
 from models import storage
 
 
@@ -23,7 +23,7 @@ class HBNBCommand(cmd.Cmd):
             return
 
         try:
-            new_instance = eval(arg)()
+            new_instance = eval(arg)
 
             new_instance.save()
 
