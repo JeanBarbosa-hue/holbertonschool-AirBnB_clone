@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+
+"""Module with class called Amenity"""
+
 from models.base_model import BaseModel
 
 
