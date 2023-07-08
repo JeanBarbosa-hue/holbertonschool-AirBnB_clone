@@ -1,6 +1,6 @@
 # AirBnB Console
 
-![](https://tenor.com/view/airbnb-door-gif-4896163)
+![](https://github.com/JeanBarbosa-hue/holbertonschool-AirBnB_clone/blob/master/image/airbnb-door.gif)
 
 The AirBnB Console is a command-line interface (CLI) for managing objects in the AirBnB project. It allows users to create, view, update, and delete instances of various classes, such as User, Listing, and more.
 
