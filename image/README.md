@@ -1,0 +1,1 @@
+This file contain the image place it in the README.md file of the AirBnB Console proyect.
