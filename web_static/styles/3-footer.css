@@ -7,8 +7,8 @@ footer {
     bottom: 0;
 }
 
-footer p {
+footer h5 {
     height: 50%;
     text-align: center;
-    top: 0.5rem;
+    margin-bottom: 0;
 }

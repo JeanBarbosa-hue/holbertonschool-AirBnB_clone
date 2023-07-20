@@ -8,15 +8,12 @@ header {
 
 .header-logo {
     position: absolute;
+    height: 50%;
     left: 20px;
-    vertical-align: middle;
-
 }
 
-.container {
-    max-width: 1000px;
-    margin-top: 30px;
-    margin-left: 50%;
+.header-logo a {
+    position: absolute;
+    height: 50%;
+    left: 20px;
 }
-
-.filter {}
